@@ -1,6 +1,9 @@
 <?php
  
 header('Content-type: application/json');
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: Origin, Content-Type, Authorization");
+header("Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS, DELETE");
  
 $errors = '';
  
@@ -10,7 +13,7 @@ if(empty($errors))
 	$postdata = file_get_contents("php://input");
 	$request = json_decode($postdata);
  
-	$from_email = $request->email;
+	$from_email = 'treasure1210@gmail.com';
 	$message = $request->message;
 	$from_name = $request->name;
  
